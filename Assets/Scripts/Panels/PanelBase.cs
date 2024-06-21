@@ -1,3 +1,4 @@
+using System;
 using Core;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ public abstract class PanelBase : BaseMonoBehaviour
 
     public abstract void Initialize();
     
-    public virtual void OpenPanel() => gameObject.SetActive(true);
+    public virtual void OpenPanel(Action callBack = null) => gameObject.SetActive(true);
     public virtual void ClosePanel() => gameObject.SetActive(false);
     
 }

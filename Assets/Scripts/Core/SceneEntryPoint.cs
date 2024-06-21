@@ -7,6 +7,7 @@ public class SceneEntryPoint : BaseMonoBehaviour
 {
     [SerializeField] private List<ControllerBase> controllers;
     [SerializeField] private List<PanelBase> panels;
+    
     private void Awake()
     {
         for (var i = 0; i < controllers.Count; i++)
@@ -14,7 +15,8 @@ public class SceneEntryPoint : BaseMonoBehaviour
 
         for (var j = 0; j < panels.Count; j++)
         {
-            if (panels[j].IsPermenant) panels[j].OpenPanel();
+            panels[j].Initialize();
+            if (panels[j].IsPermenant) {panels[j].OpenPanel();}
             else panels[j].ClosePanel();
         }
     }

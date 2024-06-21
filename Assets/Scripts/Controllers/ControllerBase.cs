@@ -9,7 +9,7 @@ namespace Controllers
         }
 
         public abstract void Initialize();
-
+        
     }
 }
 

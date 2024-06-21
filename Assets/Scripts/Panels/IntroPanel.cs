@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,10 +16,10 @@ public class IntroPanel : PanelBase
     {
     }
     
-    public override void OpenPanel()
+    public override void OpenPanel(Action callBack = null)
     {
-        splashIcon.DOFade(0, fadeDuration).SetEase(Ease.OutBack);
         base.OpenPanel();
+        splashIcon.DOFade(0, fadeDuration).SetEase(Ease.OutBack);
     }
     
 }
